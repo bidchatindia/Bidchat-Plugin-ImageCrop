@@ -30,6 +30,28 @@ The resulting JPEG quality. default: 100
 
 The Crop Rectangle Height.
 
+### Example 
+
+```js
+function cropImage(imagePath) {
+    
+    var onSucess = function(message) {
+        alert("Crop Success : " + message);
+        setPicture(message);
+    };
+    
+    var onFailure = function(message) {
+        alert("Crop Failed with error" + message.code);
+    };
+    
+    var options = { 
+       imageHeight : 300
+    };
+    
+    plugins.crop(onSucess, onFailure, imagePath, options);
+}
+```
+
 ### Libraries used
 
  * iOS: [PEPhotoCropEditor](https://github.com/kishikawakatsumi/PEPhotoCropEditor)
