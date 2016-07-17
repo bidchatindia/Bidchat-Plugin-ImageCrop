@@ -54,6 +54,8 @@ function cropImage(imagePath) {
 
 ### For Android-Cordova
 In case you get this error "Error: Width (0) and height (0) cannot be <= 0" add the following to gradle
+
+
  android {  
    defaultConfig {  
      generatedDensities = []  
