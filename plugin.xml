@@ -57,6 +57,8 @@
 
     <framework src="com.yalantis:ucrop:2.1.1" />
 
+    <framework src="src/android/build-extras.gradle" custom="true" type="gradleReference" />
+
     <config-file target="AndroidManifest.xml" parent="/manifest/application">
         <activity
             android:name="com.yalantis.ucrop.UCropActivity"
