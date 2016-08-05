@@ -39,7 +39,13 @@ public class CropPlugin extends CordovaPlugin {
             height = height == 0 ? width : height;
             quality = quality == 0 ? 100 : quality;
 
-            this.inputUri = Uri.parse("file://" + imagePath);
+            if (!imagePath.contains("content:") && !imagePath.contains("file:")) {
+                this.inputUri = Uri.parse("file://" + imagePath);
+            }
+            else
+            {
+                this.inputUri = Uri.parse(imagePath);
+            }
             this.outputUri = Uri.fromFile(new File(getTempDirectoryPath() + "/" + System.currentTimeMillis() + "-cropped.jpg"));
 
             PluginResult pr = new PluginResult(PluginResult.Status.NO_RESULT);
