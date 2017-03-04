@@ -22,6 +22,10 @@
     self.quality = [quality unsignedIntegerValue];
     NSString *filePrefix = @"file://";
     
+    if(imagePath == nil || [imagePath isKindOfClass:[NSNull class]]) {
+        return;
+    }
+
     if ([imagePath hasPrefix:filePrefix]) {
         imagePath = [imagePath substringFromIndex:[filePrefix length]];
     }
