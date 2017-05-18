@@ -36,7 +36,7 @@ public class CropPlugin extends CordovaPlugin {
             }
             String imagePath = args.getString(0);
 
-            height = height == 0 ? width : height;
+            height = height == 0 ? width : ((width * 3) / 4);
             quality = quality == 0 ? 100 : quality;
 
             if (!imagePath.contains("content:") && !imagePath.contains("file:")) {
