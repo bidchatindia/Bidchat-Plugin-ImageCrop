@@ -54,7 +54,9 @@
     if(cropRectHeightValue == 0) {
         cropRectHeightValue = length;
     }
-    
+    else {
+       cropRectHeightValue = length *3/4; 
+    }
     
     // TODO parameterize this
     cropController.imageCropRect = CGRectMake((width - length) / 2,
